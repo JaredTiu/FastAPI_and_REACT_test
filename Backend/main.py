@@ -6,6 +6,7 @@ from typing import List
 
 class Shopping(BaseModel):
     name: str
+    quantity: int= 1
 
 class Fruits(BaseModel):
     fruits: List[Shopping]
@@ -27,3 +28,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+memory_db = {"fruits": [], "meats": []}
+
+@app.get("/fruits", response_model=Fruits)
+def get_fruits():
+    return Fruits(fruits=memory_db["fruits"])
+
+@app.get("/meats", response_model=Meats)
+def get_meats():
+    return Meats(meats=memory_db["meats"])
+
+@app.post("/fruits")
+def add_fruit(fruit: Shopping):
+    memory_db["fruits"].append(fruit)
+    return {"message": "Fruit added successfully"}
+
+@app.post("/meats")
+def add_meat(meat: Shopping):
+    memory_db["meats"].append(meat)
+    return {"message": "Meat added successfully"}
