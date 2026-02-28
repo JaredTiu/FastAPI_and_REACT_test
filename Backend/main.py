@@ -47,3 +47,6 @@ def add_fruit(fruit: Shopping):
 def add_meat(meat: Shopping):
     memory_db["meats"].append(meat)
     return {"message": "Meat added successfully"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
