@@ -17,7 +17,7 @@ class Meats(BaseModel):
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "http://localhost:5173",
 ]
 
 app.add_middleware(
@@ -49,4 +49,4 @@ def add_meat(meat: Shopping):
     return {"message": "Meat added successfully"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8003)
