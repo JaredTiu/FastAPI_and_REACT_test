@@ -5,4 +5,10 @@ from pydantic import BaseModel
 from typing import List
 
 class Shopping(BaseModel):
-    
+    name: str
+
+app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+]
