@@ -1,0 +1,15 @@
+for initial setup 
+if there is no venv yet in the terminal run .\Backend\venv\Scripts\Activate.ps1
+check the lower right if it is set on the venv if not set it. 
+use the backend directory to venv eg; .\Backend\venv\Scripts\python.exe
+
+for testing and running
+make separate terminals 
+
+change ports in api.js and main.py to be 800+1 (on whats currently on)
+
+be sure on be venv 
+
+to run backend python .\Backend\main.py
+
+to run frontend, on frontend directory; npm run dev
